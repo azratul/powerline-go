@@ -1,6 +1,6 @@
 {
   "Reset": 255,
-  "UsernameFg": 250,
+  "UsernameFg": 255,
   "UsernameBg": 240,
   "UsernameRootBg": 124,
   "HostnameFg": 250,
@@ -18,7 +18,7 @@
   "ReadonlyBg": 124,
   "SshFg": 254,
   "SshBg": 166,
-  "DockerMachineFg": 177,
+  "DockerMachineFg": 255,
   "DockerMachineBg": 55,
   "DotEnvFg": 15,
   "DotEnvBg": 55,
