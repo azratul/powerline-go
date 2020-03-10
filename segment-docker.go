@@ -14,15 +14,15 @@ import (
 func segmentDocker(p *powerline) {
 	styles := map[string]map[string]string{
 		"up": map[string]string{
-			"icon": "\\e[1;36m\\]►",
+			"icon": "►",
 			"count": "0",
 		},
 		"created": map[string]string{
-			"icon": "\\e[1;37m\\]◷",
+			"icon": "◷",
 			"count": "0",
 		},
 		"exited": map[string]string{
-			"icon": "\\e[1;31m\\]◼",
+			"icon": "◼",
 			"count": "0",
 		},
 	}
@@ -49,7 +49,7 @@ func segmentDocker(p *powerline) {
 	}
 
 	if !empty {
-		docker = fmt.Sprintf("%s %s %s %s %s %s", styles["up"]["icon"],
+		docker = fmt.Sprintf("\\[\\e[1;32m\\]%s %s \\[\\e[1;36m\\]%s %s \\[\\e[1;31m\\]%s %s", styles["up"]["icon"],
 												  styles["up"]["count"],
 												  styles["created"]["icon"],
 												  styles["created"]["count"],
