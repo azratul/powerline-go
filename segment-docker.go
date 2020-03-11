@@ -42,9 +42,11 @@ func segmentDocker(p *powerline) {
 		status  = strings.ToLower(status)
 		stats  := strings.Split(status, " ")
 		if stats[0] != "" {
-			empty = false
-			now, _ := strconv.Atoi(styles[stats[0]]["count"])
-			styles[stats[0]]["count"] = strconv.Itoa(now + 1)
+			if stringInSlice(stats[0], []string{"up","created","exited"}) {
+				empty = false
+				now, _ := strconv.Atoi(styles[stats[0]]["count"])
+				styles[stats[0]]["count"] = strconv.Itoa(now + 1)
+			}
 		}
 	}
 
@@ -64,4 +66,13 @@ func segmentDocker(p *powerline) {
 			Background: p.theme.DockerMachineBg,
 		})
 	}
+}
+
+func stringInSlice(a string, list []string) bool {
+    for _, b := range list {
+        if b == a {
+            return true
+        }
+    }
+    return false
 }
